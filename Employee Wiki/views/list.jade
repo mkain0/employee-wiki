@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  //  e=JSON.stringify(employees)
+  e=JSON.stringify(flashmsg)
+  e
+  a(href="/employees/new") New
+  table
+    tr
+      th ID
+      th Firts Name
+      th Last Name
+      th Email
+    - employees.forEach(function(v,i){
+    tr
+      td=i
+      td=v.firtsName
+      td=v.lastName
+      td=v.email
+      td
+        a(href="/employees/edit/"+v._id) Edit
+        | 
+        a(href="/employees/delete/"+v._id) Delete
+    - });

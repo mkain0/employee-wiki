@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  form(action='',method='post')
+    div
+      label(for='firtsName') Firts Name:
+      input(type='text', name='firtsName', id='firtsName', placeholder='Firts Name here...')
+    div
+      label(for='lastName') Last Name:
+      input(type='text', name='lastName', id='lastName', placeholder='Last Name here...')
+    div
+      label(for='email') Email:
+      input(type='text', name='email', id='email', placeholder='Email here...')
+    div
+      label(for='password') Password:
+      input(type='text', name='password', id='password', placeholder='Password here...')
+    div
+      label(for='confirm') Confirm:
+      input(type='text', name='confirm', id='confirm', placeholder='Confirm Password here...')
+    div
+      input(type='submit', value='Save')
+  style.
+    form label { min-width: 80px; display: inline-block; }
+    form > div { padding: 5px; }
