@@ -14,7 +14,10 @@
     "jade": "^1.11.0",
     "mongoose": "~4.3.4",
     "connect-flash": "~0.1.1",
-    "express-session": "~1.12.1"
+    "express-session": "~1.12.1",
+    "mongoose-fixtures": "0.0.1",
+    "passport": "~0.3.2",
+    "passport-local": "~1.0.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -23,6 +26,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "request": "^2.60.0",
     "time-grunt": "^1.2.1",
-    "load-grunt-tasks": "^3.2.0"
+    "load-grunt-tasks": "^3.2.0",
+    "zombie": "~2.0.8"
   }
 }
