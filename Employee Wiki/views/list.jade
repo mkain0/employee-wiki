@@ -2,16 +2,17 @@ extends layout
 
 block content
   h1= title
-  //  e=JSON.stringify(employees)
+  // e=JSON.stringify(employees)
   e=JSON.stringify(flashmsg)
   e
-  a(href="/employees/new") New
+  a(href="/panel/employees/new") New
   table
     tr
       th ID
       th Firts Name
       th Last Name
-      th Email
+      th E-Mail
+      th Options
     - employees.forEach(function(v,i){
     tr
       td=i
@@ -19,7 +20,7 @@ block content
       td=v.lastName
       td=v.email
       td
-        a(href="/employees/edit/"+v._id) Edit
+        a(href="/panel/employees/edit/"+v._id) Edit
         | 
-        a(href="/employees/delete/"+v._id) Delete
+        a(href="/panel/employees/delete/"+v._id) Delete
     - });
