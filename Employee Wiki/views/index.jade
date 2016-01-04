@@ -3,3 +3,24 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  #remote
+    input.typeahead(type='text', placeholder='Search')
+
+  script.
+    var bestPictures = new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      prefetch: '../panel/employees/search/:keyword',
+      remote: {
+        url: '../panel/employees/search/:keyword',
+        wildcard: ':keyword'
+      }
+    });
+
+    $('#remote .typeahead').typeahead(null, {
+      name: 'employees',
+      display: 'value',
+      source: 'employees'
+    });
+
+

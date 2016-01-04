@@ -100,7 +100,7 @@ app.post('/panel/employees/edit/:id', function(req, res){
     });
 });
 
-app.get('/panel/employees/search/:keyword', function(req, res){
+app.get('/panel/employees/search/:keyword', adminAuth, function(req, res){
     Employees.find({ $or: [ { firtsName: new RegExp(".*"+req.params.keyword+".*", 'gi') }, 
         { lastName: new RegExp(".*"+req.params.keyword+".*", 'gi') } ] }) // Global search, ignore case
         .select('-password')
